@@ -1,11 +1,8 @@
-from tools.vector_store import index_data_with_local_embeddings
-from tools.transforming import transform_hotpotqa_to_documents
+from utils.vector_store import index_data_with_local_embeddings
+from utils.transforming import transform_hotpotqa_to_documents
 from pathlib import Path
 
-# --- CHỈNH SỬA ĐƯỜNG DẪN Ở ĐÂY ---
-# Đảm bảo đường dẫn này trỏ đến thư mục chứa dữ liệu HotpotQA thô của bạn (tải về bằng datasets)
 HOTPOTQA_RAW_PATH = "../data/hotpot_qa_raw" 
-# Lưu ý: Cần đảm bảo bạn đã tạo thư mục ./data/hotpot_qa_raw và đã lưu dữ liệu vào đó.
 
 def main():
     if not Path(HOTPOTQA_RAW_PATH).exists():

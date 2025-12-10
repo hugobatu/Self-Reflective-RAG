@@ -7,7 +7,7 @@ def grade_node(state: AgentState) -> AgentState:
     # Prompt yêu cầu LLM đóng vai giám khảo (Critic)
     grading_prompt = f"""Bạn là một chuyên gia đánh giá RAG. 
     Dựa trên TÀI LIỆU và CÂU HỎI, hãy đánh giá CÂU TRẢ LỜI.
-    - Tiêu chí: CÂU TRẢ LỜI có bị ẢO GIÁC (HALLUCINATION) so với TÀI LIỆU không?
+    - Tiêu chí: CÂU TRẢ LỜI có bị HALLUCINATION so với TÀI LIỆU không?
     - Trả lời CHỈ MỘT TỪ: "PASS" (Nếu đáp án dựa trên tài liệu) hoặc "FAIL" (Nếu có sai sót/ảo giác).
     ---
     CÂU HỎI: {state['question']}
@@ -25,5 +25,5 @@ def grade_node(state: AgentState) -> AgentState:
         reflect_prompt = "Tại sao câu trả lời trên FAIL? Hãy nêu ra lỗi sai ngắn gọn."
         reflection = llm.invoke(reflect_prompt).content
         state["reflection"] = reflection
-        
+    
     return state

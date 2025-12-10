@@ -1,12 +1,12 @@
 import os
 from dotenv import load_dotenv
 # Import các thành phần cần thiết
-from main import app 
+from app import app 
 from state import AgentState 
 # Import hàm để load ChromaDB (nếu cần kiểm tra)
 
 # 1. Load biến môi trường (API Keys)
-load_dotenv() 
+load_dotenv()
 
 # 2. Định nghĩa câu hỏi thử nghiệm (Nên dùng câu hỏi multi-hop từ HotpotQA)
 test_question = "Which magazine was started first Arthur's Magazine or First for Women?"
