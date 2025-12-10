@@ -1,7 +1,6 @@
 from typing import TypedDict, List
 
-class AgentState(TypedDict):
-    """Đại diện cho trạng thái chung của agent qua từng bước."""
+class AgentState(TypedDict, total=False):
     question: str                   # Câu hỏi gốc từ người dùng
     documents: List[str]            # List các đoạn văn (context) tìm được
     generation: str                 # Câu trả lời (draft hoặc final)
